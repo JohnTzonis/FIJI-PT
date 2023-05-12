@@ -5,6 +5,8 @@ To install the necessary packages, run the following command in your terminal:<b
 ```sh
 npm install
 ```
+Create .env file and add you API_KEY=.....
+
 ---
 Running the Application:<br><br>
 To start the front-end server, run the following command:<br>
