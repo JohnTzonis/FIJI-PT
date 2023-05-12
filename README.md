@@ -15,7 +15,7 @@ npm run dev
 <br>
 To start the back-end server, run the following command:<br>
 ```sh
-'npm run start:backend'
+npm run start:backend
 ```
 ---
 
