@@ -12,7 +12,6 @@ To start the front-end server, run the following command:<br>
 ```sh
 npm run frontend
 ```
-<br>
 To start the back-end server, run the following command:<br>
 ```sh
 npm run backend
