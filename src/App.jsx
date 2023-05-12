@@ -6,6 +6,7 @@ const App = () => {
   const [ message, setMessage ] = useState(null)
   const [ previousChats, setPreviousChats ] = useState([])
   const [ currentTitle, setCurrentTitle ] = useState(null)
+  const [loading, setLoading] = useState(false);
 
   const createNewChat = () => {
     setMessage(null)
@@ -70,6 +71,16 @@ const App = () => {
   const uniqueTitles = Array.from(new Set(previousChats.map(previousChat => previousChat.title)))
   console.log(uniqueTitles)
 
+  const handleKeyUp = (e) => {
+    if (e.key === "Enter") {
+      getMessages();
+      e.target.classList.add("input-shake");
+      setTimeout(() => {
+        e.target.classList.remove("input-shake");
+      }, 500);
+    }
+  };
+
   return (
     <>
       <div className="app">
@@ -86,20 +97,23 @@ const App = () => {
           {!currentTitle && <h1>Fiji-PT</h1>}
           <ul className="feed">
             {currentChat?.map((chatMessage, index) =>
-              <li key={index}>
+              <li key={index} className='cloud'>
                 <p className='role' >{chatMessage.role}</p>
                 <p>{chatMessage.content}</p>
               </li>)}
           </ul>
           <div className="botton-section">
             <div className="input-container">
-              <input value={value} onChange= {(e) => setValue(e.target.value)}/>
+              <input
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                onKeyUp={handleKeyUp} // <-- add this
+                className="input"
+              />
               <div id="submit" onClick={getMessages}>
-              ➢
+                ➢
               </div>
-              <p className="info">
-                info info info
-              </p>
+              <p className="info">Fiji knows the answer.</p>
             </div>
           </div>
         </section>
