@@ -2,7 +2,7 @@ FIJI-PT
 A React-OpenAI chat application.
 ---
 Installation
-- To install the necessary packages, run the following command in your terminal:
+- To install the necessary packages, run the following command in your terminal:<br>
 npm install
 ---
 Running the Application
