@@ -10,12 +10,12 @@ npm install
 Running the Application:<br><br>
 To start the front-end server, run the following command:<br>
 ```sh
-npm run dev
+npm run frontend
 ```
 <br>
 To start the back-end server, run the following command:<br>
 ```sh
-npm run start:backend
+npm run backend
 ```
 ---
 
