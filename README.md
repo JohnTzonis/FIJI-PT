@@ -1,5 +1,4 @@
-FIJI-PT<br><br>
-<h2>A React-OpenAI chat application.</h2>
+FIJI-PT. A React-OpenAI chat application.
 ---
 Installation:<br><br>
 To install the necessary packages, run the following command in your terminal:<br>
