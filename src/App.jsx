@@ -96,18 +96,23 @@ const App = () => {
         <section className="main">
           {!currentTitle && <h1>Fiji-PT</h1>}
           <ul className="feed">
-            {currentChat?.map((chatMessage, index) =>
-              <li key={index} className='cloud'>
-                <p className='role' >{chatMessage.role}</p>
-                <p>{chatMessage.content}</p>
-              </li>)}
+          {currentChat?.map((chatMessage, index) =>
+          <li
+            key={index}
+            className={`cloud ${chatMessage.role === 'assistant' ? 'right' : 'left'}`}
+          >
+            <p className='role' >{chatMessage.role}</p>
+            <p>{chatMessage.content}</p>
+            {chatMessage.role === 'assistant' && <img className='gif' src="/giphy.gif" alt="giphy" />}
+          </li>
+          )}
           </ul>
           <div className="botton-section">
             <div className="input-container">
               <input
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
-                onKeyUp={handleKeyUp} // <-- add this
+                onKeyUp={handleKeyUp}
                 className="input"
               />
               <div id="submit" onClick={getMessages}>
